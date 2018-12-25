@@ -48,7 +48,124 @@ table {
 }
 /*==============================================*/
 html, body {
-    height: 100%;
-    margin: 0;
+	height: 100%;
+	min-height: 100%;
+	margin: 0;
+
+	background-image: linear-gradient(rgb(213, 209, 224), rgb(180, 164, 226), rgb(142, 112, 223), rgb(109, 65, 230), rgb(91, 41, 228));
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+
+	font-family: 'Titillium Web', sans-serif;
+
+	position: relative;
 }
 
+.site-container {
+	position: relative;
+	min-height: 100%;
+}
+
+
+/* === menu === */
+.menu-container {
+	background-color: white;
+	border-bottom: 2px dashed gray;
+	border-top: 2px dashed gray;
+
+	padding: 6px 0;
+}
+
+.menu {
+	display: inline-block;
+}
+
+.menu-item {
+	display: inline-block;
+
+	color: rgb(91, 41, 228);
+
+	font-weight: 700;
+	font-size: 0.9em;
+	line-height: 1.5em;
+
+	padding: 2px 0;
+	margin-left: 3vw;
+
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.menu-item:hover {
+	box-sizing: content-box;
+	border-bottom: 1px solid rgb(91, 41, 228);
+}
+
+/* === calendar icon and calendar === */
+.calendar-icon {
+	position: absolute;
+	right: 15px;
+	bottom: 15px;
+	z-index: 10;
+
+	display: inline-block;
+	padding: 0px;
+	
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 0 0 5px 0 black;
+	cursor: pointer;
+}
+.calendar-icon:hover {
+	box-shadow: none;
+}
+.calendar-icon img {
+	height: 48px;
+	width: 48px;
+}
+
+.side-menu {
+	box-sizing: border-box;
+	height: 100%;
+	max-width: 100%;
+	width: 0px;
+
+	position: absolute;
+	right: 0;
+	z-index: 20;
+	transition: 0.6s;
+
+	background-color: white;
+	box-shadow: -5px 0 25px -2px black;
+
+}
+
+
+
+/* === visit counter === */
+.counter-container {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+
+	padding: 6px 0;
+	
+	background-color: transparent;
+	border-bottom: 2px dashed white;
+
+}
+
+.counter-container p {
+	margin-left: 3vw;
+
+	font-size: 0.9em;
+	font-weight: 400;
+	line-height: 1.5em;
+
+	color: white;
+}
+
+
+/*... mobile phone ...*/
+@media only screen and (max-width: 768px) {
+	
+}
