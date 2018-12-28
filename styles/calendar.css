@@ -1,0 +1,326 @@
+.calendar-button {
+	display: inline-block;
+
+	background-color: white;
+	color: rgb(80, 50, 255);
+	font-weight: 700;
+	box-shadow: 0 0 3px 0 black;
+
+	cursor: pointer;
+}
+.calendar-button:hover {
+	box-shadow: none;
+	border: 1px solid lightgray;
+}
+
+.calendar-input:focus {
+	border-bottom: 2px solid rgb(80, 50, 255) !important;
+}
+.calendar-input {
+	display: inline-block;
+	box-sizing: border-box;
+	
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: 700;
+
+	outline: none;
+	border: none;
+
+	background-color: white;
+	color: rgb(80, 50, 255);
+	/*border-radius: 5px 5px 0 0;*/
+	padding-left: 5px;
+	
+	box-shadow: 0 0 3px 0px black;
+}
+
+.calendar-sidemenu {
+	box-sizing: border-box;
+	
+	height: 100%;
+	max-width: 100%;
+	width: 0px;
+	
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 20;
+	transition: 0.3s;
+
+	background-color: rgba(255, 255, 255, 0.85);
+	
+	box-shadow: -5px 0 25px -2px black;
+
+	overflow-x: hidden;
+}
+.calendar-content-container {
+	height: 100%;
+	width: 100%;
+	overflow: auto;
+}
+
+.row {
+	margin: 15px;
+}
+
+.hl {
+	border-top: 1px solid rgb(80, 50, 255);
+	margin: 5px 15px;
+}
+
+/* ... first row ... */
+.row-first {
+	position: relative;
+	height: 54px;
+
+	/* leave space for absolutely positioned x button */
+	padding-right: 54px;
+}
+
+#x-icon {
+	margin-right: 0px;
+	padding: 2px;
+
+	position: absolute;
+	right: 0;
+
+	border-radius: 15px;
+}
+#x-icon img {
+	height: 48px;
+	width: 48px;
+}
+
+/* ... second row ... */
+.row-second {
+	height: calc(1.5em + 10px);
+	margin-bottom: 30px;
+}
+
+#input-day, #input-month {
+	box-sizing: border-box;
+
+	width: 50px;
+	height: 100%;
+	margin: 0 12px;
+}
+
+#search-date-button {
+	padding: 5px 10px;
+
+	border-radius: 5px;
+
+	font-weight: 700;
+	font-size: 0.9em;
+	line-height: 1.5em;
+
+	margin-left: 0px;
+}
+
+/* ... third row ... */
+.row-third {
+	height: 100px;	
+}
+
+#day-box {
+	display: inline-block;
+	box-sizing: border-box;
+	
+	width: 40%;
+	height: 100%;
+
+	/* toto tu je zato, kvoli nejakemu baseline pri inline blokoch
+	cely text bol posunuty dole na uroven textu v druhom inline bloku
+	otrasne je cele html aj css naco su tu taketo pakoviny co nikto necaka ze tak funguje
+	zbytocne */
+	vertical-align: top;
+}
+#day-box p {
+	box-sizing: border-box;
+	max-height: 100%;
+	max-width: 100%;
+
+	border-radius: 15px;
+	background-image: linear-gradient(rgb(180, 164, 230), rgb(142, 112, 230), rgb(109, 65, 230), rgb(90, 40, 230));;
+	color: white;
+
+	line-height: 94px;
+	font-size: 80px;
+	font-weight: 700;
+
+	text-align: center;
+}
+
+#dayinfo-box {
+	display: inline-block;
+	box-sizing: border-box;
+
+	height: 100%;
+	width: 60%;
+
+	text-align: center;
+}
+#dayinfo-box div {
+	height: 31px;
+}
+#dayinfo-box div p {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+
+	color: rgb(80, 50, 255);
+	font-weight: 700;
+}
+
+/* ... row of a header type ... */
+.row-header {
+	font-size: 1em;
+	display: inline-block;
+
+	margin-bottom: 0;
+}
+.row-header p::before {
+	display: inline-block;
+	content: "";
+	background-color: rgb(80, 50, 255);
+	border-radius: 25%;
+
+	height: 0.5em;
+	width: 0.5em;
+
+	margin-right: 5px;
+
+	/* vertically center this guy */
+	position: relative;
+	top: 25%;
+	transform: translateY(-25%);
+}
+
+/* ... results ... */
+.result-container {
+	padding: 0 0 0 10px;
+	padding-top: 10px;
+
+	margin: 2px 15px;
+
+	overflow: auto;
+}
+
+.clickable {
+	box-shadow: 0 0 10px -2px gray;
+	border: none;
+	cursor: pointer;
+}
+.clickable:hover {
+	box-shadow: none;
+	border: 1px solid lightgray;
+}
+
+.result {
+	display: inline-block;
+	float: left;
+	
+	margin-right: 15px;
+	margin-bottom: 10px;
+
+	background-color: white;
+	border-radius: 10px;
+
+	border: 1px solid lightgray;
+	
+}
+.result span {
+	display: inline-block;
+	float: left;
+}
+.result-flag {
+	font-size: 1.1em;
+	font-weight: 700;
+	background-color: rgb(80, 50, 255);
+	color: white;
+	padding: 5px 10px;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.result-text {
+	font-size: 1em;
+
+	padding: 5px 8px;
+}
+
+/* ... fourth row ... */
+#input-name {
+	margin: 0 10px;
+
+	height: calc(1.5em + 10px)
+}
+
+#search-name-button {
+	border-radius: 5px;
+	padding: 5px 10px;
+
+	font-weight: 700;
+	font-size: 0.9em;
+	line-height: 1.5em;
+}
+
+#search-results-days {
+	padding-bottom: 30px;
+}
+
+.no-results-msg p {
+	display: inline-block;
+
+	color: rgb(225, 154, 0);
+	padding: 5px 10px;
+	background-color: white;
+	border: 1px solid lightgray;
+	border-radius: 10px;
+}
+
+/* ... tooltips ... */
+.tooltip-parent {
+	position: relative;
+}
+.calendar-tooltip {
+	position: absolute;
+	z-index: 1000;
+
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
+
+	padding: 7px;
+	cursor: default;
+
+	display: none;
+}
+
+#date-tooltip {
+	left: -135px;
+	top: calc(100% + 8px);
+}
+#date-tooltip::after {
+	content: "";
+  	position: absolute;
+	left: 83%;
+	bottom: 100%;
+  	border-width: 7px;
+  	border-style: solid;
+  	border-color: transparent transparent rgba(0, 0, 0, 0.8) transparent;
+}
+
+.calendar-description-row {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+
+	padding: 15px 0;
+	line-height: 1em;
+
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
+	text-align: center;
+}
+#name-description-box {
+	display: none;
+}

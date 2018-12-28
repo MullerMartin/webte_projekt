@@ -52,7 +52,7 @@ html, body {
 	min-height: 100%;
 	margin: 0;
 
-	background-image: linear-gradient(rgb(213, 209, 224), rgb(180, 164, 226), rgb(142, 112, 223), rgb(109, 65, 230), rgb(91, 41, 228));
+	background-image: linear-gradient(rgb(213, 209, 230), rgb(180, 164, 230), rgb(142, 112, 230), rgb(109, 65, 230), rgb(90, 40, 230));
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 
@@ -65,7 +65,6 @@ html, body {
 	position: relative;
 	min-height: 100%;
 }
-
 
 /* === menu === */
 .menu-container {
@@ -83,7 +82,8 @@ html, body {
 .menu-item {
 	display: inline-block;
 
-	color: rgb(91, 41, 228);
+	color: rgb(90, 40, 230);
+	color: rgb(80, 50, 255);
 
 	font-weight: 700;
 	font-size: 0.9em;
@@ -97,49 +97,24 @@ html, body {
 }
 .menu-item:hover {
 	box-sizing: content-box;
-	border-bottom: 1px solid rgb(91, 41, 228);
+	border-bottom: 1px solid rgb(90, 40, 230);
 }
 
-/* === calendar icon and calendar === */
-.calendar-icon {
+/* === calendar icon === */
+#calendar-icon {
 	position: absolute;
 	right: 15px;
 	bottom: 15px;
 	z-index: 10;
 
-	display: inline-block;
-	padding: 0px;
-	
-	background-color: white;
-	border-radius: 5px;
-	box-shadow: 0 0 5px 0 black;
-	cursor: pointer;
+	padding: 2px;
+	border-radius: 15px;
 }
-.calendar-icon:hover {
-	box-shadow: none;
-}
-.calendar-icon img {
+
+#calendar-icon img {
 	height: 48px;
 	width: 48px;
 }
-
-.side-menu {
-	box-sizing: border-box;
-	height: 100%;
-	max-width: 100%;
-	width: 0px;
-
-	position: absolute;
-	right: 0;
-	z-index: 20;
-	transition: 0.6s;
-
-	background-color: white;
-	box-shadow: -5px 0 25px -2px black;
-
-}
-
-
 
 /* === visit counter === */
 .counter-container {
