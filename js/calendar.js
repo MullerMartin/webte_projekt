@@ -1,3 +1,20 @@
+var flags = {
+    sk: "\u{1f1f8}\u{1f1f0}",
+    cz: "\u{1f1e8}\u{1f1ff}",
+    hu: "\u{1f1ed}\u{1f1fa}",
+    pl: "\u{1f1f5}\u{1f1f1}",
+    at: "\u{1f1e6}\u{1f1f9}"
+}
+
+/* ============================== */
+/* === pridaj kalendar do DOM === */
+/* ============================== */
+appendCalendar();
+setCalendarToCurrentDate();
+
+/* ===================== */
+/* ===== FUNCTIONS ===== */
+/* ===================== */
 function createCalendar() {
     let calendar = document.createElement("div");
     calendar.classList.add("calendar-sidemenu");
@@ -220,7 +237,6 @@ function constructResultItem(flag, text) {
 /* ========================= */
 /* ====== TODO Denisa ====== */
 /* ========================= */
-
 function setCalendarToCurrentDate() {
     // toto tu je len tak aby nieco bolo v kalendari kym to nespravis
     setDate(26, 12, 2018);
@@ -234,16 +250,7 @@ function setCalendarToCurrentDate() {
 
 }
 
-/* ============= */
-/* tu su nejake funkcie na pracu s kalendarom */
-/* ============= */
-var flags = {
-    sk: "\u{1f1f8}\u{1f1f0}",
-    cz: "\u{1f1e8}\u{1f1ff}",
-    hu: "\u{1f1ed}\u{1f1fa}",
-    pl: "\u{1f1f5}\u{1f1f1}",
-    at: "\u{1f1e6}\u{1f1f9}"
-}
+// tu som nejake funckie spravil co mozes pouzit
 
 // prida, resp. odstrani vsetky result elementy z kontajnera vysledkov pre meniny
 // to description je z toho xml dokumentu ta polozka <SKd> napriklad

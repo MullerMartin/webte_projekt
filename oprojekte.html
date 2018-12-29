@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>WEBTE projekt</title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/simple_page.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/calendar.css" />
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- calendar icon -->
+    <div class="calendar-button" id="calendar-icon">
+        <img src="images/calendar.svg" />
+    </div>
+
+    <div class="site-container" id="page-container">
+
+        <div class="redundant-but-still-needed">
+
+            <!-- menu -->
+            <div class="menu-container">
+                <div class="menu">
+                    <a id="menuitem-autori" class="menu-item" href="#">Autori</a>
+                    <a id="menuitem-onas" class="menu-item" href="oprojekte.html">O projekte</a>
+                </div>
+            </div>
+
+            <!-- site content container -->
+            
+            <div class="content-container" id="content">
+                <!-- ... iba sem pridavajte vas content na stranku ... -->
+                <div class="content">
+
+                    <h1>O projekte</h1>
+
+                    <p>Táto stránka vznikla ako záverečný projekt na predmet Webové technológie v zimnom semestri 2018/2019.</p>
+
+                    <table class="tasks-table">
+                        <tr>
+                            <td><div class="tcell theader">Úloha</div></td>
+                            <td><div class="tcell theader">Denisa</div></td>
+                            <td><div class="tcell theader">Martin</div></td>
+                            <td><div class="tcell theader">Matúš</div></td>
+                        </tr>
+
+                        <tr>
+                            <td><div class="tcell ttext">Layout stránky a grafický návrh</div></td>
+                            <td></td>
+                            <td></td>
+                            <td><div class="tcell tmarker"></div></td>
+                        </tr>
+
+                        <tr>
+                            <td><div class="tcell ttext">Trojúrovňové menu</div></td>
+                            <td></td>
+                            <td></td>
+                            <td><div class="tcell tmarker"></div></td>
+                        </tr>
+
+                        <tr>
+                            <td><div class="tcell ttext">Kalendár</div></td>
+                            <td><div class="tcell tmarker"></div></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td><div class="tcell ttext">Počítanie osobných prístupov</div></td>
+                            <td></td>
+                            <td><div class="tcell tmarker"></div></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td><div class="tcell ttext">Path-based breadcrumbs</div></td>
+                            <td></td>
+                            <td><div class="tcell tmarker"></div></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td><div class="tcell ttext">Tri stĺpce s článkami</div></td>
+                            <td><div class="tcell tmarker"></div></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td><div class="tcell ttext">Prispôsobenie stránky na tlač</div></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                
+                </div>
+                
+
+            </div>
+
+        </div>
+
+        <!-- counter of visits -->
+        <div class="counter-container">
+            <p id="counter-text">Na tejto stránke ste <span id="counter-num"></span>. krát</p>
+        </div>
+        
+    </div>
+
+    
+    <script src="js/calendar.js"></script>
+    <script src="js/main.js"></script>
+    
+</body>
+</html>

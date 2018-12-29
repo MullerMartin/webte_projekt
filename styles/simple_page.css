@@ -1,0 +1,99 @@
+.content {
+    background-color: rgba(255,255,255,0.5);
+
+    padding: 20px;
+}
+
+.content h1 {
+    font-size: 1.5em;
+    font-weight: 900;
+    margin-bottom: 20px;
+
+    color: black;
+}
+
+.content p {
+    margin: 10px 5px;
+}
+
+/* ... tabulka ... */
+.tasks-table {
+    margin: 30px auto;
+}
+
+.tasks-table td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.tasks-table .tcell {
+    margin-bottom: 5px;
+    margin-right: 5px;
+
+    text-align: center;
+}
+
+.theader {
+    font-weight: 700;
+
+    padding: 10px 10px;
+    
+    color: white;
+    background-image: linear-gradient(rgb(142, 112, 230), rgb(109, 65, 230), rgb(90, 40, 230));
+}
+
+.ttext {
+    padding: 10px 10px;
+
+    border-radius: 15px;
+    background-color: white;
+}
+
+.tmarker {
+    display: inline-block;
+    box-sizing: border-box;
+
+    width: 0.7em;
+    height: 0.7em;
+
+    background-color: white;
+    border: 2px solid rgb(80, 50, 255);
+    border-radius: 50%;
+}
+
+/* ... stranka O mne ... */
+.img-container img {
+    box-sizing: border-box;
+    display: block;
+    width: 150px;
+    height: 150px;
+
+    color: black;
+    background-color: white;
+    border: 3px solid white;
+    border-radius: 50%;
+
+    box-shadow: 0 0 10px -2px black;
+
+    margin: 0 auto;
+}
+
+ul {
+    margin: 15px;
+    margin-left: 40px;
+
+    list-style-type: disc;
+    list-style-position: outside;
+    color: black;
+}
+ul li {
+    margin-bottom: 10px;
+}
+ul li a {
+    text-decoration: none;
+    color: rgb(80, 50, 255);
+}
+ul li a:hover {
+    font-weight: 700;
+}
+

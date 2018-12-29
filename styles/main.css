@@ -49,7 +49,6 @@ table {
 /*==============================================*/
 html, body {
 	height: 100%;
-	min-height: 100%;
 	margin: 0;
 
 	background-image: linear-gradient(rgb(213, 209, 230), rgb(180, 164, 230), rgb(142, 112, 230), rgb(109, 65, 230), rgb(90, 40, 230));
@@ -64,6 +63,14 @@ html, body {
 .site-container {
 	position: relative;
 	min-height: 100%;
+	max-width: 100%;
+}
+
+.redundant-but-still-needed {
+	/* vynechane miesto pre spodnu listu */
+	padding-bottom: calc(1.5em + 12px);
+
+	overflow: auto;
 }
 
 /* === menu === */
@@ -71,7 +78,7 @@ html, body {
 	background-color: white;
 	border-bottom: 2px dashed gray;
 	border-top: 2px dashed gray;
-
+	
 	padding: 6px 0;
 }
 
@@ -100,20 +107,31 @@ html, body {
 	border-bottom: 1px solid rgb(90, 40, 230);
 }
 
-/* === calendar icon === */
-#calendar-icon {
-	position: absolute;
-	right: 15px;
-	bottom: 15px;
-	z-index: 10;
-
-	padding: 2px;
-	border-radius: 15px;
+/* === page content === */
+.content-container {
+	max-width: 100%;
+	
+	margin: 5vh 5vw calc(5vh - 1.5em - 12px) 5vw;
 }
 
-#calendar-icon img {
-	height: 48px;
-	width: 48px;
+.breadcrumbs-container {
+	background-color: white;
+	padding: 15px;
+
+	border-radius: 10px;
+	margin-bottom: 15px;
+}
+
+.breadcrumbs-container p {
+	margin: 0;
+}
+
+.crumb-item {
+	margin: 0 5px;
+	font-size: 0.9em;
+
+	color: rgb(90, 40, 230);
+	text-decoration: none;
 }
 
 /* === visit counter === */
@@ -139,8 +157,36 @@ html, body {
 	color: white;
 }
 
+/* === calendar icon === */
+#calendar-icon {
+	position: fixed;
+	right: 15px;
+	bottom: 15px;
+	z-index: 10;
+
+	padding: 2px;
+	border-radius: 15px;
+}
+
+#calendar-icon img {
+	height: 48px;
+	width: 48px;
+}
 
 /*... mobile phone ...*/
 @media only screen and (max-width: 768px) {
-	
+	.content-container {
+		margin: 2vh 0 0 0;
+		padding: 0;
+	}
+
+	.breadcrumbs-container {
+		padding: 10px;
+		margin-left: 2vw;
+		margin-right: 2vw;
+	}
+
+	.crumb-item:first-child {
+		margin-left: 0;
+	}
 }
