@@ -1,9 +1,18 @@
+/*
 var flags = {
     sk: "\u{1f1f8}\u{1f1f0}",
     cz: "\u{1f1e8}\u{1f1ff}",
     hu: "\u{1f1ed}\u{1f1fa}",
     pl: "\u{1f1f5}\u{1f1f1}",
     at: "\u{1f1e6}\u{1f1f9}"
+}
+*/
+var flags = {
+    sk: "SK",
+    cz: "CZ",
+    hu: "HU",
+    pl: "PL",
+    at: "AT"
 }
 
 /* ============================== */
