@@ -65,8 +65,8 @@
 .img-container img {
     box-sizing: border-box;
     display: block;
-    width: 150px;
-    height: 150px;
+    width: 15vw;
+    height: 15vw;
 
     color: black;
     background-color: white;
@@ -75,7 +75,7 @@
 
     box-shadow: 0 0 10px -2px black;
 
-    margin: 0 auto;
+    margin: 10px 0 20px 20px;
 }
 
 ul {
@@ -97,3 +97,15 @@ ul li a:hover {
     font-weight: 700;
 }
 
+
+/*... mobile phone ...*/
+@media only screen and (max-width: 768px) {
+	.img-container img {
+        width: 20vh;
+        height: 20vh;
+
+        margin: 0 auto;
+    }
+
+    
+}
