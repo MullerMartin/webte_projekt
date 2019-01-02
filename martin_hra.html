@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="styles/main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="styles/simple_page.css">
     <link rel="stylesheet" type="text/css" media="screen" href="styles/calendar.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/martin_hra.css" >
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 
 </head>
@@ -29,7 +30,24 @@
             <!-- site content container -->
             <div class="content-container" id="content">
                 <!-- ... iba sem pridavajte vas content na stranku ... -->
-                
+
+                <div class="timer">
+                    Čas trvania hry:
+                    <h2 class="time"><time>00:00:00</time></h2>
+
+                </div>
+
+
+                <div class="button">
+                    <button><a href="tutorial_Muller.html" target="_blank"> Demo </a></button>
+                </div>
+
+
+                <div class="container">
+                    <canvas id="c">
+
+                    </canvas>
+                </div>
                 
 
             </div>
@@ -46,6 +64,8 @@
     
     <script src="js/calendar.js"></script>
     <script src="js/main.js"></script>
-    
+    <script src="js/fabric.min.js"></script>
+    <script src="js/Martin_hra.js"></script>
+
 </body>
 </html>
