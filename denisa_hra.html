@@ -10,6 +10,23 @@
     <link rel="stylesheet" type="text/css" media="screen" href="styles/calendar.css" />
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
 
+	<link rel="stylesheet" type="text/css" href="styles/denisa_hra.css">
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/vendor/jquery-3.1.1.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/jquery-ui.css">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+   <script src="js/vendor/jquery-ui.js"></script>
+
+
+    <script src="js/denisa_hra.js"></script>
+
+
 </head>
 <body>
 
@@ -29,6 +46,42 @@
             <!-- site content container -->
             <div class="content-container" id="content">
                 <!-- ... iba sem pridavajte vas content na stranku ... -->
+			
+<form>Čas: <input type="text" id="inputid" value="0:00:00"></form>
+<div id="back">
+			<img src="images/Prazdne.png" id="empty" alt="Prazdne">
+                    
+			<img src="images/Modra.png" id="imgfind1" class="hidden" alt="Modra">
+                        <img src="images/Tyrkys.png" id="imgfind2" class="hidden" alt="Tyrkys">
+                        <img src="images/Fialova.png" id="imgfind3" class="hidden" alt="Fialova">
+                        <img src="images/ZelenaMala.png" id="imgfind4" class="hidden" alt="ZelenaMala">
+		    	<img src="images/Cervena.png" id="imgfind5" class="hidden" alt="Cervena">
+		    	<img src="images/Ruzova.png" id="imgfind6" class="hidden" alt="Ruzova">
+			<img src="images/Zlta.png" id="imgfind7" class="hidden" alt="Zlta">
+                        <img src="images/ZelenaVelka.png" id="imgfind8" class="hidden" alt="ZelenaVelka">
+
+
+                        <img src="images/Modra.png" id="Modra" class="drag" alt="modra">
+                        <img src="images/Tyrkys.png" id="Tyrkys" class="drag" alt="tyrkysova">
+                        <img src="images/Fialova.png" id="Fialova" class="drag" alt="fialova">
+                        <img src="images/ZelenaMala.png" id="ZelenaMala" class="drag" alt="zelenamala">
+                        <img src="images/Cervena.png" id="Cervena" class="drag" alt="cervena">
+                        <img src="images/Ruzova.png" id="Ruzova" class="drag" alt="ruzova">
+                        <img src="images/Zlta.png" id="Zlta" class="drag" alt="zlta">
+                        <img src="images/ZelenaVelka.png" id="ZelenaVelka" class="drag" alt="zelenavelka">
+<div id="txt"></div>
+                   
+		<video id="video" class="video" >
+  <source src="video/ukazka.mp4" type="video/mp4">
+</video>
+ <button id="demo" class="demo" onclick="myFunction()">DEMO ukážka</button>
+ <button id="start" onclick="f()">Spustiť hru</button>
+ <button id="nova" class="nova" onclick="refresh()" >Nová Hra</button>
+
+
+
+           </div>     
+	
                 
                 
 
