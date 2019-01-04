@@ -333,10 +333,12 @@ a:focus {
 }
 
 .info{
+
 	font-size: 20px;
 	font-weight: bold;
 }
 
 .nadpisM{
+	size: 15px;
 	font-weight: bold;
 }
