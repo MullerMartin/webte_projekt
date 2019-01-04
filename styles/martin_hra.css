@@ -1,0 +1,32 @@
+.popis{
+    text-align: right;
+    margin-top: 150px;
+    font-weight: bold;
+}
+
+#c{
+    width: 500px;
+    height: 500px;
+
+}
+
+.container{
+    width: 500px;
+    height: 500px;
+    border: 2px black solid;
+    margin-left: 90px;
+}
+.time{
+    margin-left: 200px;
+
+}
+
+.video{
+    width: 300px;
+}
+
+.button{
+    margin-left: 450px;
+    margin-bottom: 10px;
+    width: 30px;
+}

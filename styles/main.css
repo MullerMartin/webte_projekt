@@ -294,3 +294,45 @@ a:focus {
 		margin-top: 0;
 	}
 }
+
+
+/* === Informacie o skole === */
+
+.stlpec1{
+
+	width: 30%;
+	box-sizing: border-box;
+	background-color: lightsteelblue;
+	text-align: center;
+	border: 1px black solid;
+	display: inline-block;
+}
+.stlpec2{
+
+	width: 30%;
+	box-sizing: border-box;
+	background-color: papayawhip;
+	text-align: center;
+	margin-left: 15px;
+	border: 1px black solid;
+	display: inline-block;
+}
+.stlpec3{
+	vertical-align: top;
+	width: 30%;
+	box-sizing: border-box;
+	background-color: rosybrown;
+	text-align: center;
+	margin-left: 15px;
+	border: 1px black solid;
+	display: inline-block;
+}
+
+.stlpce{
+	margin-left: 150px;
+}
+
+.info{
+	size: 15px;
+	font-weight: bold;
+}

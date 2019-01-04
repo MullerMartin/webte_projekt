@@ -61,7 +61,15 @@ var menuitems = [
         href: "oprojekte.html",
         text: "O projekte",
         submenu: null
+    },
+
+    {
+        href: "oSkole.html",
+        text: "Informácie o škole",
+        submenu: null
     }
+
+
 ];
 addMenuItems(menuitems);
 
@@ -71,15 +79,21 @@ addMenuItems(menuitems);
 /* ==== alebo Denisa === */
 /* ===================== */
 // skontroluj cookies, nastav kolkata to je navsteva
-setVisitCounter(1);
-
+setVisitCounter(getVisites());
+incrementVisites();
 /* ===================== */
 /* ==== TODO Martin ==== */
 /* ===================== */
 // pridaj ten path-based breadcrump vec
 addBreadcrumbsContainer();
-addCrumbItem("Hlavna stranka", "index.html"); // toto len docasne aby nieco bolo na stranke
+var savedBreadcrumbs = getBreadcrumbs();
 
+for(var i = 0;i < savedBreadcrumbs.length;i++)
+{
+    addCrumbItem(savedBreadcrumbs[i].title, savedBreadcrumbs[i].link);
+}
+//addCrumbItem("Hlavna stranka", "index.html"); // toto len docasne aby nieco bolo na stranke
+updateBreadcrumbs();
 
 /* ==== useful functions ==== */
 /* ========================== */
@@ -165,4 +179,50 @@ function addSubmenu(parentElement, layer, submenu) {
 
     }
 
+}
+
+function incrementVisites() {
+    var currCount = getVisites();
+    document.cookie = "VisitesCount="+(currCount+1);
+}
+
+function getVisites() {
+  var count = document.cookie
+        .split(";")
+        .find(function (pair) {
+           var keyPair = pair.split('=');
+            return keyPair[0] === 'VisitesCount';
+        } );
+
+  if(!count)
+      return 0;
+
+  return parseInt(count.split("=")[1]);
+}
+
+function updateBreadcrumbs() {
+    var countBreadcrumbs = getBreadcrumbs();
+    if(countBreadcrumbs.length >= 5)
+    {
+        countBreadcrumbs.shift();
+    }
+    countBreadcrumbs.push({
+        link:window.location.href,
+        title:document.title
+    });
+    document.cookie = "Breadcrumbs="+ JSON.stringify(countBreadcrumbs)+';expires='+new Date().setDate(new Date().getDate() + 1);
+}
+
+function getBreadcrumbs() {
+    var count = document.cookie
+        .split(";")
+        .find(function (pair) {
+            var keyPair = pair.split('=');
+            return keyPair[0] === 'Breadcrumbs';
+        } );
+
+    if(!count)
+        return [];
+
+    return JSON.parse(count.split("=")[1]);
 }
