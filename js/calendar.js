@@ -1,4 +1,4 @@
-/*
+/* emojis not showing consistently on different devices
 var flags = {
     sk: "\u{1f1f8}\u{1f1f0}",
     cz: "\u{1f1e8}\u{1f1ff}",
