@@ -1,0 +1,182 @@
+#empty
+{
+    z-index: 0;
+    margin-left:-180px;
+}
+
+.drag
+{
+    z-index: 1;
+  position: absolute;
+    margin-left:-180px;
+
+}
+
+.hidden{
+  visibility: hidden;
+  position: absolute;
+  top: 480px;
+  bottom: 30px;
+  left: 285px;
+  right: 30px;
+
+}
+
+button {
+margin-left: 110px;
+border-radius: 5px 5px 5px 5px;
+	display: inline-block;
+
+	background-color: white;
+	color: rgb(80, 50, 255);
+	font-weight: 700;
+	height: 30px;
+
+	box-shadow: 0 0 3px 0 black;
+
+	cursor: pointer;
+}
+
+button:hover {
+	box-shadow: none;
+	border: 1px solid lightgray;
+}
+
+
+.video{
+margin-top: -240px;
+display:none;
+width: 320px;
+height: 240px;
+opacity: 0.7;
+
+}
+form{
+margin-left: 1160px;
+}
+#inputid{
+text-align: center;
+width: 80px;
+height: 30px;
+border-radius: 90%;
+
+}
+
+#back{
+ // background: url(back.jpg); 
+//opacity: 0.9;
+        
+}
+#imgfind1{
+margin-left: 150px;
+margin-top: 50px;
+}
+
+#imgfind2{
+margin-left: -26px;
+margin-top: -21px;
+}
+
+#imgfind3{
+margin-left: 30px;
+margin-top: 30px;
+}
+
+#imgfind4{
+margin-left: -65px;
+margin-top: -51px;
+}
+
+#imgfind5{
+margin-left: 68px;
+margin-top: -89px;
+}
+
+#imgfind6{
+margin-left: 233px;
+margin-top: -92px;
+}
+
+#imgfind7{
+margin-left: 11px;
+margin-top: -183px;
+}
+
+#imgfind8{
+margin-left: -25px;
+margin-top: -114px;
+}
+
+#Zlta{
+margin-left: -250px;
+  visibility: hidden;
+
+}
+
+#ZelenaVelka{
+margin-left: -120px;
+margin-top: 280px;
+  visibility: hidden;
+
+}
+.hide{
+  visibility: hidden;
+}
+.show{
+  visibility: visible;
+}
+.demo{
+  visibility: hidden;
+}
+.shownova{
+  visibility: visible;
+}
+.nova{
+  visibility: hidden;
+}
+
+
+#Cervena{
+margin-left: -10px;
+margin-top: 214px;
+  visibility: hidden;
+
+}
+
+#Ruzova{
+margin-left: -280px;
+margin-top: 314px;
+  visibility: hidden;
+
+}
+
+#Fialova{
+margin-left: -250px;
+margin-top: 140px;
+  visibility: hidden;
+
+}
+
+#ZelenaMala{
+margin-left: 10px;
+margin-top: 440px;
+  visibility: hidden;
+
+}
+
+#Modra{
+margin-left: -190px;
+margin-top: 450px;
+  visibility: hidden;
+
+}
+#Tyrkys{
+margin-left: -10px;
+margin-top: 30px;
+  visibility: hidden;
+
+}
+
+
+
+
