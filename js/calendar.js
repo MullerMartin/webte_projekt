@@ -66,6 +66,9 @@ function createCalendar() {
     let input = document.createElement("input");
     input.classList.add("calendar-input");
     input.type = "number";
+    input.min = "1";
+    input.max = "31";
+    input.disabled="disabled"
     input.id = "input-day";
     span.appendChild(input);
     row.appendChild(span);
@@ -75,6 +78,9 @@ function createCalendar() {
     input = document.createElement("input");
     input.classList.add("calendar-input");
     input.type = "number";
+    input.min = "1";
+    input.max = "12";
+    input.disabled="disabled"
     input.id = "input-month";
     span.appendChild(input);
     row.appendChild(span);
@@ -247,17 +253,145 @@ function constructResultItem(flag, text) {
 /* ====== TODO Denisa ====== */
 /* ========================= */
 function setCalendarToCurrentDate() {
-    // toto tu je len tak aby nieco bolo v kalendari kym to nespravis
-    setDate(26, 12, 2018);
-    addNamesdayResult("sk", "Štefan", "Štefan");
-    addNamesdayResult("cz", "Štěpán");
-    addNamesdayResult("hu", "István");
-    addNamesdayResult("pl", "Jana, Zanety");
-    addNamesdayResult("at", "Stefanitag");
-    addHolidayResult("sk", "Druhý sviatok vianočný");
-    addHolidayResult("cz", "Svátek vánoční 2");
+	var datum = new Date();
+	var day = datum.getDate();
+	var month = datum.getMonth()+1;
+	var year = datum.getFullYear();
+        setDate(day, month, year);
+	setName(day, month);
 
 }
+
+function setName(day, month){
+	
+	var den = parseInt(day);
+	var mesiac = parseInt(month);
+	
+	if(mesiac<10) mesiac = 0+""+mesiac;
+	if(den < 10) den = 0 + "" + den;
+	var datum = mesiac +""+ den;
+	var posun = 1;
+	if(mesiac === 12 && parseInt(den) < 26) {
+		posun = 0;
+	}
+	if(mesiac === 12 && parseInt(den) >= 26){
+		 posun = 4;
+	}
+	else if(mesiac === 11 ){
+		posun = 2;
+	} else if(mesiac >4 ){
+		 posun = 2;
+	}
+
+	
+		
+	$.ajax( {
+             url:'meniny.xml',
+             dataType:'xml',
+             success:function(data) {
+
+                var menoSK = data.getElementsByTagName("SK");
+                var menoCZ = data.getElementsByTagName("CZ");		
+                var menoHU = data.getElementsByTagName("HU");		
+                var menoPL = data.getElementsByTagName("PL");		
+                var menoAT = data.getElementsByTagName("AT");	
+				var sviatkySK = data.getElementsByTagName("SKsviatky");
+				var sviatkyCZ = data.getElementsByTagName("CZsviatky"); 
+
+				var dat = data.getElementsByTagName("den");
+				 
+				for(var i=0;i<366;i++){
+
+					if(dat[i].childNodes[0].nodeValue === datum){
+					    addNamesdayResult("sk", menoSK[(i-posun)].childNodes[0].nodeValue);
+					    //addNamesdayResult("cz", menoCZ[(i-posun)].childNodes[0].nodeValue);
+					    //addNamesdayResult("hu", menoHU[(i-posun)].childNodes[0].nodeValue);
+					    //addNamesdayResult("pl", menoPL[(i-posun)].childNodes[0].nodeValue);
+					    //addNamesdayResult("at", menoAT[(i-posun)].childNodes[0].nodeValue);
+
+						if(sviatkySK[(i-posun)] != undefined ){
+						addHolidayResult("sk", sviatkySK[(i-posun)].childNodes[0].nodeValue);
+						}
+						if(sviatkyCZ[(i-posun-5)] != undefined ){
+							addHolidayResult("cz", sviatkyCZ[(i-posun-5)].childNodes[0].nodeValue);
+						}
+					}
+				}
+
+            }
+          });
+	
+	
+}
+
+function findDate(str){
+          str = str.toLowerCase();
+          $.ajax( {
+             url:'meniny.xml',
+             dataType:'xml',
+             success:function(data) {
+
+				var posun = 1;
+                var meno = data.getElementsByTagName("SK");
+				var dat = data.getElementsByTagName("den");
+				var str1;
+				for(var i=0;i<362;i++){
+
+					if(i>355)posun = 4;
+					else if(i>303)posun = 3;
+					else if(i>119) posun = 2;
+					str1 = diakritika(meno[i].childNodes[0].nodeValue);
+					var str2 = str1.split(", ");
+					var lng = str2.length;
+					for(var j = 0;j<lng;j++){
+						if(str2[j]===str){
+							var den;
+							var mes;
+							var datum = dat[i+posun].childNodes[0].nodeValue;
+							mes = datum[0]+datum[1];
+							den = datum[2]+""+datum[3];
+							console.log(den);
+							console.log(mes);
+							setDate(den, parseInt(mes), 2019);
+							clearNamesdayResults();
+							clearHolidayResults();
+							setName(den, parseInt(mes));
+
+
+
+						}
+					}
+				}
+
+             }
+          });
+}
+
+function diakritika(s){
+    var r=s.toLowerCase();
+   // r = r.replace(new RegExp(/\s/g),"");
+    r = r.replace(new RegExp(/[àáâãäå]/g),"a");
+    r = r.replace(new RegExp(/ľ/g),"l");
+  	r = r.replace(new RegExp(/š/g),"s");
+  	r = r.replace(new RegExp(/č/g),"c");
+  	r = r.replace(new RegExp(/ť/g),"t");
+  	r = r.replace(new RegExp(/ž/g),"z");
+  	r = r.replace(new RegExp(/ý/g),"y");
+  	r = r.replace(new RegExp(/á/g),"a");
+  	r = r.replace(new RegExp(/í/g),"i");
+  	r = r.replace(new RegExp(/é/g),"e");
+  	r = r.replace(new RegExp(/ú/g),"u");
+  	r = r.replace(new RegExp(/ň/g),"n");
+  	r = r.replace(new RegExp(/ô/g),"o");
+    r = r.replace(new RegExp(/[èéêë]/g),"e");
+    r = r.replace(new RegExp(/[ìíîï]/g),"i");
+    r = r.replace(new RegExp(/ñ/g),"n");
+    r = r.replace(new RegExp(/[òóôõö]/g),"o");
+    r = r.replace(new RegExp(/[ùúûü]/g),"u");
+    r = r.replace(new RegExp(/[ýÿ]/g),"y");
+    //r = r.replace(new RegExp(/\W/g),"");
+    return r;
+};
 
 // tu som nejake funckie spravil co mozes pouzit
 
@@ -382,9 +516,15 @@ function setDate(day, month, year) {
 function getDay() {
     return document.getElementById("input-day").value;
 }
+function setDay(x){
+	document.getElementById("input-day") = x;
+}
 // vrati text co je v policku mesiac
 function getMonth() {
     return document.getElementById("input-month").value;
+}
+function setMonth(y){
+	document.getElementById("input-month") = y;
 }
 // vrati text co je v policku meno
 function getName() {
@@ -401,13 +541,29 @@ function showWrongDateFormatTooltip() {
     })
 }
 
+
+
 // nastavi zadanu funkciu ako obsluhu tlacitka pre vyhladavanie menin a sviatkov podla datumu
-function registerSearchDateButton(func) {
-    document.getElementById("search-date-button").addEventListener("click", func);
+    document.getElementById("search-date-button").addEventListener("click", searchDate);
+
+
+function searchDate(){
+	if(getDay() && getMonth()){
+		clearNamesdayResults();
+		clearHolidayResults();
+		setName(getDay(), getMonth());
+		setDate(getDay(), parseInt(getMonth()), 2019);
+
+	}
 }
 
 // nastavi zadanu funkciu ako obsluhu tlacitka pre vyhladavanie datumu podla menin
-function registerSearchDateButton(func) {
-    document.getElementById("search-name-button").addEventListener("click", func);
+    document.getElementById("search-name-button").addEventListener("click", searchName);
+
+function searchName(){
+	if(getName()){
+		findDate(getName());
+
+	}
 }
 

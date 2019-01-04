@@ -201,7 +201,7 @@ function startGame(settings) {
             }
 
             if (vyhra == true) {
-                alert("Uspesne si zlozil puzzle");
+                alert("Úspešne si zložil puzzle");
 
                 clearTimeout(t);
             }
